@@ -38,11 +38,11 @@ CELERY_DEFAULT_DELIVERY_MODE = 'persistent'
 CELERY_ACKS_LATE = True
 
 """ Giving each worker only TWO task at a time """
-CELERYD_PREFETCH_MULTIPLIER = 2
+CELERYD_PREFETCH_MULTIPLIER = 1
 
 """ Concurrency Settings """
 # No. of Concurrent worker processes/threads executing tasks
-CELERYD_CONCURRENCY = 4
+CELERYD_CONCURRENCY = 1 
 
 """ Message Settings """
 CELERY_MESSAGE_COMPRESSION = None

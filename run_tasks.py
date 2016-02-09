@@ -56,4 +56,4 @@ if __name__ == '__main__':
     opts = vars(args.parsing())
     ta = Tasks(opts)
     ta.allocate_tasks()
-    ta.get_results()
+    #ta.get_results()

@@ -67,22 +67,25 @@ Honeyclient Implementation',
                     url = 'http://' + url
                 urlopen(url)
             except:
-                raise argparse.ArgumentTypeError("%s doesn't exist"%url)
+                pass
+                #raise argparse.ArgumentTypeError("%s doesn't exist"%url)
         return urls
 
     def link_file(fn):
         fobj = open(fn, 'r')
         url = fobj.readline().strip()
         urls = []
+        #print "skipping link check"
         while url:
-            try:
-                if 'http://' not in url:
-                    url = 'http://' + url
-                urlopen(url)
-                urls.append(url)
-            except:
-                raise argparse.ArgumentTypeError("%s doesn't exist"%url)
-            url = fobj.readline().strip()
+            #try:
+            #    if 'http://' not in url:
+            #        url = 'http://' + url
+            #    urlopen(url)
+            urls.append(url)
+            #except:
+            #    raise argparse.ArgumentTypeError("%s doesn't exist"%url)
+            #url = fobj.readline().strip()
+        print urls
         return urls
 
     # Mutually Exclusive Group for URL's
